@@ -1,0 +1,37 @@
+I did run the time command on all the possible combination of the number files and the sort files.
+I then calculed the sys+user time (actual CPU execution time) and recorded the results in a table.
+The below observations have been drawn from that table by comparing the different execution times.
+
+sort1 uses: Bubble Sort
+
+How do you know?:
+Upon comparing the user+sys time (total actual execution time by the CPU),
+I arrived at the following conclusions:
+
+- sort1 "sorted" execution times grow at a lower rate than the sort3 sorted times, which satisfies
+the fact that bubble sort has Omega(n) and selection sort has omega(n^2),
+
+
+sort2 uses: Merge Sort
+
+How do you know?:
+Upon comparing the user+sys time (total actual execution time by the CPU),
+I arrived at the following conclusions:
+
+-Overall the execution times (user+sys) of sort 2 is on average much better than the the rest of
+the sort files (except for sort1 in the case of sorted files, much on that in the next section).
+-Furthermore, the execution times of sort 2 are almost on average the same regardless of whether
+the text file contains sorted, random or reversed numbers.
+These two points align with merge sort since merge sort has a complexity of theta(n).
+
+sort3 uses: Selection Sort
+
+How do you know?:
+
+The execution times of sort3 on sorted numbers grew at a larger rate when compared to sort1 which indicates
+that sort1 has a better best case performance than sort3 (sort3 = selection sort : omega(n^2) WHEREAS sort1 = bubble sort : omega(n))
+The random and reversed file execution times both grew at a very large rate which indicates that this algorithm
+has a complexity of O(n^2) which is also the behaviour of Selection Sort
+
+
+

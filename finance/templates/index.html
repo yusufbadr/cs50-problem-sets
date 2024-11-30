@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+
+<h2>Portfolio</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Current Cash Balance</th>
+                <th>Grand Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ cash_balance | usd }}</td>
+                <td>{{ grand_total | usd}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>Stocks</th>
+                <th>Number of shares</th>
+                <th>Current price of each stock</th>
+                <th>Total value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock_owned in stocks_owned %}
+                <tr>
+                    <td>{{ stock_owned['symbol'] }}</td>
+                    <td>{{ stock_owned['number_of_shares'] }}</td>
+                    <td>{{ stock_owned['price'] | usd}}</td>
+                    <td>{{ (stock_owned['number_of_shares'] * stock_owned['price']) | usd }}</td>
+
+                </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+
+{% endblock %}

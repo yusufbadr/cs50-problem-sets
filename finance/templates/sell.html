@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell stocks
+{% endblock %}
+
+{% block main %}
+
+    <h2>Sell Stocks</h2>
+
+    {% if stocks %}
+    <form action="/sell" method="post">
+        <div class="d-flex justify-content-center">
+            <select name="symbol" class="form-select custom-width">
+                {% for stock in stocks %}
+                    <option value="{{ stock['symbol'] }}"> {{ stock['symbol'] }} </option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <br>
+
+
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="shares" placeholder="number of shares" type="text">
+        </div>
+
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+
+    {% else %}
+    <p>You do not own any stocks</p>
+
+    {% endif %}
+{% endblock %}

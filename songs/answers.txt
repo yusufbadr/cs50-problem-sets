@@ -1,0 +1,15 @@
+1.
+Since "Audio Aura" represents the two most prominent moods of a listner, our
+job thus reduces to finding them. I would look at the magnitude of each category,
+and the two having the greatest or lowest magnitude would be the most prominent
+moods of the listener. For instance, if the energy average was 0.2 and the
+danceability was 100 this would then indicate the listener has a low energy yet
+enjoys listening to danceable music. Note that we would require a way of having
+control measurements through which the listeners analytics would be compared to.
+
+2.
+Using only the top 100 songs from the past year might give inaccurate results as
+we are using a very small sampple. A better way would be using all the songs
+that the listener did listen no in the previous year. This way our final analytics
+would have a much greater accuracy as we are using the entire avaialable data
+rather than only a very small sample of such data.
